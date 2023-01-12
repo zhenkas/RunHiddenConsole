@@ -32,6 +32,7 @@
                 CreateNoWindow = true,
                 UseShellExecute = false,
                 RedirectStandardInput = true,
+                RedirectStandardOutput = true,
                 WindowStyle = ProcessWindowStyle.Hidden,
                 WorkingDirectory = Directory.GetCurrentDirectory(),
                 Arguments = arguments,
@@ -52,6 +53,7 @@
 
                 proc.WaitForExit();
 
+                SimpleLog.Log(proc.StandardOutput.ReadToEnd());
                 return proc.ExitCode;
             }
             catch (Exception ex)

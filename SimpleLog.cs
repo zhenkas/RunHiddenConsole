@@ -704,7 +704,7 @@
         public static Exception Log(XElement xElement, Severity severity = Severity.Info, bool useBackgroundTask = true, int framesToSkip = 0)
         {
             // Filter entries below log level
-            if (xElement == null || severity < LogLevel)
+            if (xElement == null)
             {
                 return null;
             }
